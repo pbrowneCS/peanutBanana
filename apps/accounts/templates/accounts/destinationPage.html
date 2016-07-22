@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Travels</title>
+        <meta name="description" content="Sign in page for User Dashboard">
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/styles.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4">
+                    <form action="{% url 'accounts_logout' %}" method="post">
+                        {% csrf_token %}
+                        <input class="btn btn-default" type="submit" value="Logout">
+                    </form>
+                </div>
+                <div class="col-xs-4"></div>
+            </div>
+            <div class="row">
+                <h2>Data for {{destinations.title}}</h2>
+                {{destinations.title}}
+                <p>test</p>
+                <p>{{users.name}}</p>
+            </div>
+        </div>
+    </body>
+</html>
